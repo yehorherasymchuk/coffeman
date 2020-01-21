@@ -15,14 +15,14 @@ return [
      * Database integration
      */
     'database' => [
-        'enabled'    => false,
+        'enabled'    => true,
         'connection' => env('DB_CONNECTION', 'mysql'),
     ],
 
     'commands' => [
         'before'  => true,
         'paths'   => [
-            // Custom command paths
+            base_path('app/Services/Telegram/Commands'),
         ],
         'configs' => [
             // Custom commands configs
