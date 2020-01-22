@@ -41,6 +41,6 @@ return [
         'interval' => 1,
     ],
 
-    'upload_path'   => '',
-    'download_path' => '',
+    'upload_path'   => storage_path('app'),
+    'download_path' => storage_path('app'),
 ];
