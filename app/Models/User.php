@@ -1,14 +1,26 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * Class User
+ * @package App\Models
+ * @property int id
+ * @property int telegram_id
+ * @property string name
+ * @property string phone
+ */
 class User extends Authenticatable
 {
     use Notifiable;
+
+    const LEVEL_USER = 1;
+    const LEVEL_MODERATOR = 2;
+    const LEVEL_ADMIN = 3;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +28,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'phone',
+        'password',
+        'telegram_id',
     ];
 
     /**

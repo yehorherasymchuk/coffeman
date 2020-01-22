@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Services\Cart\Repositories\CartRepositoryInterface;
+use App\Services\Cart\Repositories\RedisCartRepository;
+use App\Services\Orders\Repositories\EloquentOrderRepository;
+use App\Services\Orders\Repositories\OrderRepositoryInterface;
+use App\Services\Users\Repositories\EloquentUserRepository;
+use App\Services\Users\Repositories\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(CartRepositoryInterface::class, RedisCartRepository::class);
+        $this->app->bind(UserRepositoryInterface::class, EloquentUserRepository::class);
+        $this->app->bind(OrderRepositoryInterface::class, EloquentOrderRepository::class);
     }
 
     /**

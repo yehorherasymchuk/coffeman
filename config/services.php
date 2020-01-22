@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'dots' => [
+        'host' => env('DOTS_HOST'),
+        'company_id' => env('DOTS_COMPANY_ID'),
+    ]
+
 ];
