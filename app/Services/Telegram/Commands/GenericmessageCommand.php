@@ -8,15 +8,15 @@
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 
-use App\Services\Telegram\Handlers\Commands\StartCommandHandler;
+use App\Services\Telegram\Handlers\Commands\GenericMessageCommandHandler;
 
-class StartCommand extends BaseCommand
+class GenericmessageCommand extends BaseCommand
 {
-    protected $name = 'start';
-    protected $usage = '/start';
+    protected $name = 'genericmessage';
 
     public function execute()
     {
-        return app(StartCommandHandler::class)->handle($this);
+        return app()->make(GenericMessageCommandHandler::class)->handle($this);
     }
+
 }

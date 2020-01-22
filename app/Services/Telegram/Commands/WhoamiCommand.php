@@ -12,7 +12,6 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands;
 
-use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Commands\SystemCommands\BaseCommand;
 use Longman\TelegramBot\Entities\File;
 use Longman\TelegramBot\Entities\PhotoSize;
@@ -24,7 +23,7 @@ use Longman\TelegramBot\Request;
  *
  * Simple command that returns info about the current user.
  */
-class WhoamiCommand extends SystemCommand
+class WhoamiCommand extends BaseCommand
 {
     /**
      * @var string
